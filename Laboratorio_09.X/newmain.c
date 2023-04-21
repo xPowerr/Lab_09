@@ -26,8 +26,131 @@
 #include <stdio.h>
 #include <pic16f887.h>
 
-#define _XTAL_FREQ 1000000\
 
-void main(void) {
-    return;
+#define _XTAL_FREQ 1000000 //frec de 1 MHz
+#define dirEEPROM 0x04
+
+// --------------- Variables ---------------
+uint8_t address = 0x01; // variable con la deireccion de los datodos en epeprom
+int dormir = 0 ; //bandera para indicar si esta en modo sleep 
+
+uint8_t pot;
+
+// --------------- Prototipos --------------- 
+void setup(void);
+void setupADC(void);
+// void EEPROMWRITE(uint8_t data, uint8_t address); // Escritura de eeprom
+// uint8_t EEPROMREAD(uint8_t adress); // Lectura del eeprom
+
+
+// --------------- Rutina de  interrupciones --------------- 
+void __interrupt() isr(void){
+    
+    // ---- INTERRUPCION DEL ADC --------
+    if (PIR1bits.ADIF == 1){ // Chequear bandera del conversor ADC
+        if (ADCON0bits.CHS == 0b0000){ // si está en ADC AN0, RA1
+            pot = ADRESH; // Pasar valor del ADRESH a variable pot
+            PORTC = pot; // Pasar el valor de la variable al puerto C
+            }
+        PIR1bits.ADIF = 0; // limpiar la bandera de la interrupcion 
+    }
+    
+    // --------------- Interrupcion PORTB --------------- 
+    if (INTCONbits.RBIF){ // Chequear bandera del PORTB
+        if (PORTBbits.RB7 == 0){ // Chequear si se presiona RB7
+            dormir = 0; // Establecer la bandera de dormir como 0 
+        }
+        else if (PORTBbits.RB6 == 0){ // Chequear si se presiona RB6
+            dormir = 1; // Establecer la bandera de dormir como 1
+            SLEEP(); // Activar modo sleep
+        }
+        INTCONbits.RBIF = 0; // limpiar la bandera de la interrupcion
+    }
+}
+    
+
+// --------------- main ---------------
+void main(void){
+    setup();
+    setupADC();
+    
+    while(1){
+        __delay_ms(1);
+        if (dormir == 0){ // Revisar si no esta een modo sleep con la bandera
+            if (ADCON0bits.GO == 0){ // Si la lectura del ADC se desactiva
+                ADCON0bits.GO = 1; // Activar lectura del ADC
+                __delay_us(20);
+            }
+            
+        }
+    }
+    
+}
+
+
+// --------------- Setup General ---------------
+void setup(void){
+
+// --------------- Definir analogicas ---------------
+    ANSEL = 0b00000001; // Habilitar AN0 como analogica
+    ANSELH = 0x00;
+
+// --------------- Configurar puertos ---------------    
+    TRISBbits.TRISB6 = 1; // RB6 como entrada
+    TRISBbits.TRISB7 = 1; // RB7 como entrada
+    TRISC = 0;            // Habilitar PORTC como salida
+    TRISD = 0;            // Habilitar PORTD como salida
+
+// --------------- Limpiar puertos ---------------    
+    PORTA = 0;
+    PORTB = 0;
+    PORTC = 0;
+    PORTD = 0;
+    PORTE = 0;
+
+// --------------- Habilitar pullups --------------- 
+    OPTION_REGbits.nRBPU = 0; 
+    WPUBbits.WPUB6 = 1;
+    WPUBbits.WPUB7 = 1; 
+
+// --------------- Banderas e interrupciones --------------- 
+    INTCONbits.GIE = 1;   // Habilitar interrupciones globales
+    INTCONbits.PEIE = 1;  // Habilitar interrupciones de perifericas
+    INTCONbits.RBIE = 1;  // Habilitar interrupciones en PORTB
+    
+    IOCBbits.IOCB6 = 1;   // Habilitar interrupciones en RB6
+    IOCBbits.IOCB7 = 1;   //  Habilitar interrupciones en RB7
+    
+    INTCONbits.RBIF = 0;  // Limpiar bandera de interrupcion de PORTB
+    PIR1bits.ADIF = 0;    // Limpiar bandera de interrupcion de ADC
+    PIE1bits.ADIE = 1;    // Habilitar interrupcion del ADC 
+
+// --------------- Oscilador --------------- 
+    OSCCONbits.IRCF = 0b100 ; // establecerlo en 1 MHz
+    OSCCONbits.SCS = 1; // utilizar oscilador interno
+ 
+}
+
+// --------------- Setup del ADC ---------------
+void setupADC(void){
+    // --------------- Configura el canal --------------- 
+    ADCON0bits.CHS = 0b0000; // seleccionar AN0
+    
+            
+    // --------------- Seleccion voltaje referencia --------------- 
+    ADCON1bits.VCFG1 = 0; // Voltaje de referencia de 0V
+    ADCON1bits.VCFG0 = 0; // Voltaje de referencia de 5V
+            
+    // --------------- Seleccion de reloj ---------------
+    ADCON0bits.ADCS = 0b01; // Fosc/8
+            
+    // --------------- Habilitar interrupciones del ADC ---------------
+    
+            
+    // --------------- Asignar 8 bits, justificado izquierda ---------------
+    ADCON1bits.ADFM = 0;        
+            
+    //--------------- Iniciar el ADC ---------------
+    ADCON0bits.ADON = 1;  
+    __delay_ms(10);
 }

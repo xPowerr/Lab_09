@@ -28,7 +28,7 @@
 
 
 #define _XTAL_FREQ 1000000 //frec de 1 MHz
-#define dirEEPROM 0x04
+//#define dirEEPROM 0x04
 
 // --------------- Variables ---------------
 uint8_t address = 0x01; // variable con la deireccion de los datodos en epeprom
@@ -39,8 +39,8 @@ uint8_t pot;
 // --------------- Prototipos --------------- 
 void setup(void);
 void setupADC(void);
-// void EEPROMWRITE(uint8_t data, uint8_t address); // Escritura de eeprom
-// uint8_t EEPROMREAD(uint8_t adress); // Lectura del eeprom
+void EEPROMWRITE(uint8_t data, uint8_t address); // Escritura de eeprom
+uint8_t EEPROMREAD(uint8_t adress); // Lectura del eeprom
 
 
 // --------------- Rutina de  interrupciones --------------- 
@@ -59,15 +59,22 @@ void __interrupt() isr(void){
     if (INTCONbits.RBIF){ // Chequear bandera del PORTB
         if (PORTBbits.RB7 == 0){ // Chequear si se presiona RB7
             dormir = 0; // Establecer la bandera de dormir como 0 
+            PORTEbits.RE0 = 1;
         }
         else if (PORTBbits.RB6 == 0){ // Chequear si se presiona RB6
             dormir = 1; // Establecer la bandera de dormir como 1
             SLEEP(); // Activar modo sleep
+            PORTEbits.RE0 = 0;
+        }
+        else if (PORTBbits.RB5 == 0){
+            dormir = 0 ; // Establecer la bandera de dormir como 0 
+            EEPROMWRITE(address, pot); // Escribir valor del potenciometro en el eeprom
+            PORTEbits.RE0 = 1;
         }
         INTCONbits.RBIF = 0; // limpiar la bandera de la interrupcion
     }
 }
-    
+
 
 // --------------- main ---------------
 void main(void){
@@ -80,11 +87,10 @@ void main(void){
             if (ADCON0bits.GO == 0){ // Si la lectura del ADC se desactiva
                 ADCON0bits.GO = 1; // Activar lectura del ADC
                 __delay_us(20);
-            }
-            
+            }   
         }
+        PORTD = EEPROMREAD(address); // Asignar al PORTD el valor que se lea de la EEPROM 
     }
-    
 }
 
 
@@ -96,11 +102,13 @@ void setup(void){
     ANSELH = 0x00;
 
 // --------------- Configurar puertos ---------------    
+    TRISBbits.TRISB5 = 1; // RB5 como entrada
     TRISBbits.TRISB6 = 1; // RB6 como entrada
     TRISBbits.TRISB7 = 1; // RB7 como entrada
     TRISC = 0;            // Habilitar PORTC como salida
     TRISD = 0;            // Habilitar PORTD como salida
-
+    TRISE = 0;            // Habilitar PORTE como salida
+    
 // --------------- Limpiar puertos ---------------    
     PORTA = 0;
     PORTB = 0;
@@ -110,6 +118,7 @@ void setup(void){
 
 // --------------- Habilitar pullups --------------- 
     OPTION_REGbits.nRBPU = 0; 
+    WPUBbits.WPUB5 = 1;
     WPUBbits.WPUB6 = 1;
     WPUBbits.WPUB7 = 1; 
 
@@ -118,8 +127,9 @@ void setup(void){
     INTCONbits.PEIE = 1;  // Habilitar interrupciones de perifericas
     INTCONbits.RBIE = 1;  // Habilitar interrupciones en PORTB
     
+    IOCBbits.IOCB5 = 1;   // Habilitar interrupciones en RB5
     IOCBbits.IOCB6 = 1;   // Habilitar interrupciones en RB6
-    IOCBbits.IOCB7 = 1;   //  Habilitar interrupciones en RB7
+    IOCBbits.IOCB7 = 1;   // Habilitar interrupciones en RB7
     
     INTCONbits.RBIF = 0;  // Limpiar bandera de interrupcion de PORTB
     PIR1bits.ADIF = 0;    // Limpiar bandera de interrupcion de ADC
@@ -153,4 +163,34 @@ void setupADC(void){
     //--------------- Iniciar el ADC ---------------
     ADCON0bits.ADON = 1;  
     __delay_ms(10);
+}
+
+// --------------- Definir funciones EEPROM ---------------
+void EEPROMWRITE(uint8_t address, uint8_t data){
+    EEADR = address;
+    EEDAT = data;
+    
+    EECON1bits.EEPGD = 0; // Escribir en la memoria de datos
+    EECON1bits.WREN = 1;  // habilitar escritura en eeprom 
+    
+    INTCONbits.GIE = 0;   // Deshabilita las interrupciones 
+    
+
+    //obligatorio
+    EECON2 = 0x55;
+    EECON2 = 0xAA;
+    EECON1bits.WR = 1; // Habilitar escritura
+    
+    EECON1bits.WREN = 0; // Apagar la escritura
+    
+    INTCONbits.RBIF = 0; // limpiar bandera en el puerto b
+    INTCONbits.GIE = 1; // habilitar interrupciones globales 
+            
+}
+
+uint8_t EEPROMREAD(uint8_t address){
+    EEADR = address ;
+    EECON1bits.EEPGD = 0; // Seleccionar la memoria de datos
+    EECON1bits.RD = 1;    // Habilitar lectura de datos
+    return EEDAT;         // Return de lo que se encontraba en data
 }

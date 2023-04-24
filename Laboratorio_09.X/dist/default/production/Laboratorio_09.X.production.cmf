@@ -11,23 +11,26 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$dist/default/production\Laboratorio_09.X.production.o
-cinit CODE 0 F F D 2 1
-idloc IDLOC 5 2000 2000 4 2 1
-text1 CODE 0 97 97 1E 2 1
-text2 CODE 0 4C 4C 29 2 1
-text3 CODE 0 1C 1C 30 2 1
-idataCOMMON CODE 0 B5 B5 1 2 1
-maintext CODE 0 75 75 22 2 1
-cstackCOMMON COMMON 1 70 70 6 1 1
-intentry CODE 0 4 4 8 2 1
-dataCOMMON COMMON 1 79 79 1 1 1
-bssCOMMON COMMON 1 76 76 3 1 1
-config CONFIG 4 2007 2007 2 2 1
-$C:\Users\Benzu\AppData\Local\Temp\xcAs1me0.o
+$C:\Users\Gabriel\AppData\Local\Temp\xcAsm68.o
 idloc IDLOC 5 2000 2000 4 2 1
 reset_vec CODE 0 0 0 3 2 1
 end_init CODE 0 C C 3 2 1
+config CONFIG 4 2007 2007 2 2 1
+$dist/default/production\Laboratorio_09.X.production.o
+cinit CODE 0 F F D 2 1
+idloc IDLOC 5 2000 2000 4 2 1
+text1 CODE 0 BD BD 1F 2 1
+text2 CODE 0 90 90 2D 2 1
+text3 CODE 0 F1 F1 F 2 1
+text4 CODE 0 1C 1C 46 2 1
+text5 CODE 0 DC DC 15 2 1
+idataCOMMON CODE 0 100 100 1 2 1
+maintext CODE 0 62 62 2E 2 1
+cstackCOMMON COMMON 1 70 70 5 1 1
+cstackBANK0 BANK0 1 20 20 3 1 1
+intentry CODE 0 4 4 8 2 1
+dataCOMMON COMMON 1 78 78 1 1 1
+bssCOMMON COMMON 1 75 75 3 1 1
 config CONFIG 4 2007 2007 2 2 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -35,30 +38,30 @@ config CONFIG 4 2007 2007 2 2 1
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 20-6F 1
+RAM 23-6F 1
 RAM A0-EF 1
 RAM 110-16F 1
 RAM 190-1EF 1
-BANK0 20-6F 1
+BANK0 23-6F 1
 BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
 CONST 3-3 2
-CONST B6-1FFF 2
+CONST 101-1FFF 2
 ENTRY 3-3 2
-ENTRY B6-1FFF 2
+ENTRY 101-1FFF 2
 CODE 3-3 2
-CODE B6-1FFF 2
+CODE 101-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
 SFR3 180-18F 1
-COMMON 7A-7D 1
+COMMON 79-7D 1
 EEDATA 2100-21FF 2
 STRCODE 3-3 2
-STRCODE B6-1FFF 2
+STRCODE 101-1FFF 2
 STRING 3-3 2
-STRING B6-1FFF 2
+STRING 101-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -73,76 +76,107 @@ STRING B6-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Laboratorio_09.X.production.o
-F cinit CODE >481:C:\Users\Benzu\AppData\Local\Temp\xcAs1me0.s
-F cinit CODE >484:C:\Users\Benzu\AppData\Local\Temp\xcAs1me0.s
-F cinit CODE >507:C:\Users\Benzu\AppData\Local\Temp\xcAs1me0.s
-14 cinit CODE >508:C:\Users\Benzu\AppData\Local\Temp\xcAs1me0.s
-15 cinit CODE >512:C:\Users\Benzu\AppData\Local\Temp\xcAs1me0.s
-16 cinit CODE >513:C:\Users\Benzu\AppData\Local\Temp\xcAs1me0.s
-17 cinit CODE >514:C:\Users\Benzu\AppData\Local\Temp\xcAs1me0.s
-18 cinit CODE >520:C:\Users\Benzu\AppData\Local\Temp\xcAs1me0.s
-18 cinit CODE >522:C:\Users\Benzu\AppData\Local\Temp\xcAs1me0.s
-19 cinit CODE >523:C:\Users\Benzu\AppData\Local\Temp\xcAs1me0.s
-4 intentry CODE >47:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-1C text3 CODE >47:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-1C text3 CODE >50:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-22 text3 CODE >51:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-27 text3 CODE >51:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-2B text3 CODE >52:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-2D text3 CODE >53:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-2F text3 CODE >55:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-30 text3 CODE >59:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-34 text3 CODE >60:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-38 text3 CODE >61:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-3A text3 CODE >62:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-3B text3 CODE >63:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-3F text3 CODE >64:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-43 text3 CODE >65:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-44 text3 CODE >67:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-45 text3 CODE >69:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-4C text2 CODE >92:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-4C text2 CODE >95:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-50 text2 CODE >96:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-51 text2 CODE >99:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-54 text2 CODE >100:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-55 text2 CODE >101:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-56 text2 CODE >102:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-57 text2 CODE >105:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-5A text2 CODE >106:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-5B text2 CODE >107:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-5C text2 CODE >108:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-5D text2 CODE >109:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-5E text2 CODE >112:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-61 text2 CODE >113:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-62 text2 CODE >114:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-63 text2 CODE >117:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-64 text2 CODE >118:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-65 text2 CODE >119:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-66 text2 CODE >121:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-67 text2 CODE >122:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-68 text2 CODE >124:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-69 text2 CODE >125:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-6C text2 CODE >126:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-6F text2 CODE >129:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-73 text2 CODE >130:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-74 text2 CODE >132:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-97 text1 CODE >135:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-97 text1 CODE >137:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-9B text1 CODE >141:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-9E text1 CODE >142:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-9F text1 CODE >145:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-A5 text1 CODE >151:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-A8 text1 CODE >154:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-AB text1 CODE >155:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-B4 text1 CODE >156:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-75 maintext CODE >73:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-75 maintext CODE >74:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-7A maintext CODE >75:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-7F maintext CODE >78:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-83 maintext CODE >79:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-89 maintext CODE >80:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-8F maintext CODE >81:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
-90 maintext CODE >82:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+F cinit CODE >496:C:\Users\Gabriel\AppData\Local\Temp\xcAsm68.s
+F cinit CODE >499:C:\Users\Gabriel\AppData\Local\Temp\xcAsm68.s
+F cinit CODE >522:C:\Users\Gabriel\AppData\Local\Temp\xcAsm68.s
+14 cinit CODE >523:C:\Users\Gabriel\AppData\Local\Temp\xcAsm68.s
+15 cinit CODE >527:C:\Users\Gabriel\AppData\Local\Temp\xcAsm68.s
+16 cinit CODE >528:C:\Users\Gabriel\AppData\Local\Temp\xcAsm68.s
+17 cinit CODE >529:C:\Users\Gabriel\AppData\Local\Temp\xcAsm68.s
+18 cinit CODE >535:C:\Users\Gabriel\AppData\Local\Temp\xcAsm68.s
+18 cinit CODE >537:C:\Users\Gabriel\AppData\Local\Temp\xcAsm68.s
+19 cinit CODE >538:C:\Users\Gabriel\AppData\Local\Temp\xcAsm68.s
+4 intentry CODE >47:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+DC text5 CODE >169:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+DD text5 CODE >170:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+E1 text5 CODE >171:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+E3 text5 CODE >173:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+E6 text5 CODE >174:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+E7 text5 CODE >176:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+E8 text5 CODE >180:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+EA text5 CODE >181:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+EC text5 CODE >182:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+ED text5 CODE >184:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+EE text5 CODE >186:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+EF text5 CODE >187:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+F0 text5 CODE >189:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+1C text4 CODE >47:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+1C text4 CODE >50:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+22 text4 CODE >51:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+27 text4 CODE >51:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+2B text4 CODE >52:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+2D text4 CODE >53:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+2F text4 CODE >55:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+30 text4 CODE >59:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+34 text4 CODE >60:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+38 text4 CODE >61:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+3A text4 CODE >62:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+3B text4 CODE >63:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+3C text4 CODE >64:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+40 text4 CODE >65:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+44 text4 CODE >66:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+45 text4 CODE >67:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+48 text4 CODE >68:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+49 text4 CODE >69:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+4D text4 CODE >70:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+4F text4 CODE >71:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+57 text4 CODE >72:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+5A text4 CODE >74:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+5B text4 CODE >76:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+F1 text3 CODE >191:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+F4 text3 CODE >192:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+F8 text3 CODE >193:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+FB text3 CODE >194:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+FC text3 CODE >195:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+FF text3 CODE >196:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+90 text2 CODE >98:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+90 text2 CODE >101:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+94 text2 CODE >102:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+95 text2 CODE >105:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+98 text2 CODE >106:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+99 text2 CODE >107:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+9A text2 CODE >108:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+9B text2 CODE >109:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+9C text2 CODE >110:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+9D text2 CODE >113:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+A0 text2 CODE >114:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+A1 text2 CODE >115:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+A2 text2 CODE >116:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+A3 text2 CODE >117:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+A4 text2 CODE >120:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+A7 text2 CODE >121:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+A8 text2 CODE >122:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+A9 text2 CODE >123:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+AA text2 CODE >126:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+AB text2 CODE >127:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+AC text2 CODE >128:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+AD text2 CODE >130:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+AE text2 CODE >131:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+AF text2 CODE >132:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+B0 text2 CODE >134:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+B1 text2 CODE >135:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+B4 text2 CODE >136:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+B7 text2 CODE >139:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+BB text2 CODE >140:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+BC text2 CODE >142:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+BD text1 CODE >145:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+BD text1 CODE >147:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+C1 text1 CODE >151:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+C4 text1 CODE >152:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+C5 text1 CODE >155:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+CB text1 CODE >161:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+CE text1 CODE >164:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+D1 text1 CODE >165:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+DB text1 CODE >166:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+62 maintext CODE >80:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+62 maintext CODE >81:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+67 maintext CODE >82:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+6C maintext CODE >85:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+73 maintext CODE >86:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+79 maintext CODE >87:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+7F maintext CODE >88:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+80 maintext CODE >89:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
+83 maintext CODE >92:C:\Users\Gabriel\OneDrive - Universidad del Valle de Guatemala\Documentos\Universidad\Quinto Semestre\Tareas\Programación de Microcontroladores\Labs\Lab_09\Laboratorio_09.X\newmain.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -156,44 +190,53 @@ B4 text1 CODE >156:C:\Users\Benzu\OneDrive - Universidad del Valle de Guatemala\
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 ___latbits 2 0 ABS 0 - dist/default/production\Laboratorio_09.X.production.o
-__Hspace_0 B6 0 ABS 0 - -
-__Hspace_1 7A 0 ABS 0 - -
+__Hspace_0 101 0 ABS 0 - -
+__Hspace_1 79 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 4010 0 ABS 0 - -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\Benzu\AppData\Local\Temp\xcAs1me0.o
-_main EA 0 CODE 0 maintext dist/default/production\Laboratorio_09.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\Gabriel\AppData\Local\Temp\xcAsm68.o
+_main C4 0 CODE 0 maintext dist/default/production\Laboratorio_09.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Laboratorio_09.X.production.o
-start 18 0 CODE 0 init C:\Users\Benzu\AppData\Local\Temp\xcAs1me0.o
+start 18 0 CODE 0 init C:\Users\Gabriel\AppData\Local\Temp\xcAsm68.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OPTION_REGbits 81 0 ABS 0 - dist/default/production\Laboratorio_09.X.production.o
+_EEPROMWRITE 1B8 0 CODE 0 text5 dist/default/production\Laboratorio_09.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
 __HdataCOMMON 0 0 ABS 0 dataCOMMON -
-intlevel0 0 0 ENTRY 0 functab C:\Users\Benzu\AppData\Local\Temp\xcAs1me0.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\Benzu\AppData\Local\Temp\xcAs1me0.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\Benzu\AppData\Local\Temp\xcAs1me0.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\Benzu\AppData\Local\Temp\xcAs1me0.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\Benzu\AppData\Local\Temp\xcAs1me0.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\Benzu\AppData\Local\Temp\xcAs1me0.o
+_EEPROMREAD 1E2 0 CODE 0 text3 dist/default/production\Laboratorio_09.X.production.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\Gabriel\AppData\Local\Temp\xcAsm68.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\Gabriel\AppData\Local\Temp\xcAsm68.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\Gabriel\AppData\Local\Temp\xcAsm68.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\Gabriel\AppData\Local\Temp\xcAsm68.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\Gabriel\AppData\Local\Temp\xcAsm68.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\Gabriel\AppData\Local\Temp\xcAsm68.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\Laboratorio_09.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Laboratorio_09.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
+EEPROMREAD@address 20 0 BANK0 1 cstackBANK0 dist/default/production\Laboratorio_09.X.production.o
+EEPROMWRITE@data 70 0 COMMON 1 cstackCOMMON dist/default/production\Laboratorio_09.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext -
-__pidataCOMMON 16A 0 CODE 0 idataCOMMON dist/default/production\Laboratorio_09.X.production.o
+__pidataCOMMON 200 0 CODE 0 idataCOMMON dist/default/production\Laboratorio_09.X.production.o
 _ADRESH 1E 0 ABS 0 - dist/default/production\Laboratorio_09.X.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production\Laboratorio_09.X.production.o
 __LdataCOMMON 0 0 ABS 0 dataCOMMON -
+_EECON1bits 18C 0 ABS 0 - dist/default/production\Laboratorio_09.X.production.o
+_EECON2 18D 0 ABS 0 - dist/default/production\Laboratorio_09.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\Benzu\AppData\Local\Temp\xcAs1me0.o
-___stacklo 0 0 ABS 0 - C:\Users\Benzu\AppData\Local\Temp\xcAs1me0.o
+__end_of_EEPROMREAD 200 0 CODE 0 text3 dist/default/production\Laboratorio_09.X.production.o
+_address 78 0 COMMON 1 dataCOMMON dist/default/production\Laboratorio_09.X.production.o
+___stackhi 0 0 ABS 0 - C:\Users\Gabriel\AppData\Local\Temp\xcAsm68.o
+___stacklo 0 0 ABS 0 - C:\Users\Gabriel\AppData\Local\Temp\xcAsm68.o
 __LidataCOMMON 0 0 ABS 0 idataCOMMON -
 _WPUBbits 95 0 ABS 0 - dist/default/production\Laboratorio_09.X.production.o
 start_initialization 1E 0 CODE 0 cinit dist/default/production\Laboratorio_09.X.production.o
 _TRISBbits 86 0 ABS 0 - dist/default/production\Laboratorio_09.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\Benzu\AppData\Local\Temp\xcAs1me0.o
+__pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\Laboratorio_09.X.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\Gabriel\AppData\Local\Temp\xcAsm68.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -212,6 +255,7 @@ __Lcinit 1E 0 CODE 0 cinit -
 __Lidloc 0 0 IDLOC 5 idloc -
 __Lstack 0 0 STACK 2 stack -
 _PORTBbits 6 0 ABS 0 - dist/default/production\Laboratorio_09.X.production.o
+_PORTEbits 9 0 ABS 0 - dist/default/production\Laboratorio_09.X.production.o
 _INTCONbits B 0 ABS 0 - dist/default/production\Laboratorio_09.X.production.o
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
@@ -229,20 +273,23 @@ __Lsfr1 0 0 ABS 0 sfr1 -
 __Lsfr2 0 0 ABS 0 sfr2 -
 __Lsfr3 0 0 ABS 0 sfr3 -
 __Ltext 0 0 ABS 0 text -
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-__S0 B6 0 ABS 0 - -
-__S1 7A 0 ABS 0 - -
+__S0 101 0 ABS 0 - -
+__S1 79 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_isr 38 0 CODE 0 text3 dist/default/production\Laboratorio_09.X.production.o
-_pot 78 0 COMMON 1 bssCOMMON dist/default/production\Laboratorio_09.X.production.o
+_isr 38 0 CODE 0 text4 dist/default/production\Laboratorio_09.X.production.o
+_pot 77 0 COMMON 1 bssCOMMON dist/default/production\Laboratorio_09.X.production.o
+__end_of_EEPROMWRITE 1E2 0 CODE 0 text5 dist/default/production\Laboratorio_09.X.production.o
 saved_w 7E 0 ABS 0 - dist/default/production\Laboratorio_09.X.production.o
-_dormir 76 0 COMMON 1 bssCOMMON dist/default/production\Laboratorio_09.X.production.o
+_dormir 75 0 COMMON 1 bssCOMMON dist/default/production\Laboratorio_09.X.production.o
 __HidataCOMMON 0 0 ABS 0 idataCOMMON -
-__end_of_isr 98 0 CODE 0 text3 dist/default/production\Laboratorio_09.X.production.o
+__end_of_isr C4 0 CODE 0 text4 dist/default/production\Laboratorio_09.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Benzu\AppData\Local\Temp\xcAs1me0.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Gabriel\AppData\Local\Temp\xcAsm68.o
 _PIE1bits 8C 0 ABS 0 - dist/default/production\Laboratorio_09.X.production.o
-__pmaintext EA 0 CODE 0 maintext dist/default/production\Laboratorio_09.X.production.o
+__pmaintext C4 0 CODE 0 maintext dist/default/production\Laboratorio_09.X.production.o
+EEPROMWRITE@address 71 0 COMMON 1 cstackCOMMON dist/default/production\Laboratorio_09.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
 _ADCON0bits 1F 0 ABS 0 - dist/default/production\Laboratorio_09.X.production.o
@@ -252,7 +299,8 @@ __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
-__pbssCOMMON 76 0 COMMON 1 bssCOMMON dist/default/production\Laboratorio_09.X.production.o
+__pbssCOMMON 75 0 COMMON 1 bssCOMMON dist/default/production\Laboratorio_09.X.production.o
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 _PIR1bits C 0 ABS 0 - dist/default/production\Laboratorio_09.X.production.o
 __Lend_init 18 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
@@ -260,11 +308,13 @@ end_of_initialization 30 0 CODE 0 cinit dist/default/production\Laboratorio_09.X
 __Hintentry 18 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 6 0 CODE 0 reset_vec -
-_setupADC 12E 0 CODE 0 text1 dist/default/production\Laboratorio_09.X.production.o
-__ptext1 12E 0 CODE 0 text1 dist/default/production\Laboratorio_09.X.production.o
-__ptext2 98 0 CODE 0 text2 dist/default/production\Laboratorio_09.X.production.o
-__ptext3 38 0 CODE 0 text3 dist/default/production\Laboratorio_09.X.production.o
-__end_of_setupADC 16A 0 CODE 0 text1 dist/default/production\Laboratorio_09.X.production.o
+_setupADC 17A 0 CODE 0 text1 dist/default/production\Laboratorio_09.X.production.o
+__ptext1 17A 0 CODE 0 text1 dist/default/production\Laboratorio_09.X.production.o
+__ptext2 120 0 CODE 0 text2 dist/default/production\Laboratorio_09.X.production.o
+__ptext3 1E2 0 CODE 0 text3 dist/default/production\Laboratorio_09.X.production.o
+__ptext4 38 0 CODE 0 text4 dist/default/production\Laboratorio_09.X.production.o
+__ptext5 1B8 0 CODE 0 text5 dist/default/production\Laboratorio_09.X.production.o
+__end_of_setupADC 1B8 0 CODE 0 text1 dist/default/production\Laboratorio_09.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __Lreset_vec 0 0 CODE 0 reset_vec -
@@ -273,8 +323,10 @@ __Lfunctab 0 0 ENTRY 0 functab -
 __Lclrtext 0 0 ABS 0 clrtext -
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\Laboratorio_09.X.production.o
 __Hend_init 1E 0 CODE 0 end_init -
-__end_of_main 12E 0 CODE 0 maintext dist/default/production\Laboratorio_09.X.production.o
+__end_of_main 120 0 CODE 0 maintext dist/default/production\Laboratorio_09.X.production.o
 _ANSEL 188 0 ABS 0 - dist/default/production\Laboratorio_09.X.production.o
+_EEADR 10D 0 ABS 0 - dist/default/production\Laboratorio_09.X.production.o
+_EEDAT 10C 0 ABS 0 - dist/default/production\Laboratorio_09.X.production.o
 _PORTA 5 0 ABS 0 - dist/default/production\Laboratorio_09.X.production.o
 _PORTB 6 0 ABS 0 - dist/default/production\Laboratorio_09.X.production.o
 _PORTC 7 0 ABS 0 - dist/default/production\Laboratorio_09.X.production.o
@@ -282,15 +334,16 @@ _PORTD 8 0 ABS 0 - dist/default/production\Laboratorio_09.X.production.o
 _PORTE 9 0 ABS 0 - dist/default/production\Laboratorio_09.X.production.o
 _TRISC 87 0 ABS 0 - dist/default/production\Laboratorio_09.X.production.o
 _TRISD 88 0 ABS 0 - dist/default/production\Laboratorio_09.X.production.o
-__end_of_setup EA 0 CODE 0 text2 dist/default/production\Laboratorio_09.X.production.o
+_TRISE 89 0 ABS 0 - dist/default/production\Laboratorio_09.X.production.o
+__end_of_setup 17A 0 CODE 0 text2 dist/default/production\Laboratorio_09.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 interrupt_function 8 0 CODE 0 intentry dist/default/production\Laboratorio_09.X.production.o
 _IOCBbits 96 0 ABS 0 - dist/default/production\Laboratorio_09.X.production.o
-_setup 98 0 CODE 0 text2 dist/default/production\Laboratorio_09.X.production.o
+_setup 120 0 CODE 0 text2 dist/default/production\Laboratorio_09.X.production.o
 __pintentry 8 0 CODE 0 intentry dist/default/production\Laboratorio_09.X.production.o
 __initialization 1E 0 CODE 0 cinit dist/default/production\Laboratorio_09.X.production.o
-__pdataCOMMON 79 0 COMMON 1 dataCOMMON dist/default/production\Laboratorio_09.X.production.o
+__pdataCOMMON 78 0 COMMON 1 dataCOMMON dist/default/production\Laboratorio_09.X.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -316,8 +369,9 @@ __pdataCOMMON 79 0 COMMON 1 dataCOMMON dist/default/production\Laboratorio_09.X.
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-cstackCOMMON 1 70 70 A 1
-intentry 0 4 8 B2 2
+cstackCOMMON 1 70 70 9 1
+cstackBANK0 1 20 20 3 1
+intentry 0 4 8 FD 2
 reset_vec 0 0 0 3 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section

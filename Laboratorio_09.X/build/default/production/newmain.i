@@ -2767,8 +2767,8 @@ uint8_t pot;
 
 void setup(void);
 void setupADC(void);
-
-
+void EEPROMWRITE(uint8_t data, uint8_t address);
+uint8_t EEPROMREAD(uint8_t adress);
 
 
 
@@ -2787,10 +2787,17 @@ void __attribute__((picinterrupt(("")))) isr(void){
     if (INTCONbits.RBIF){
         if (PORTBbits.RB7 == 0){
             dormir = 0;
+            PORTEbits.RE0 = 1;
         }
         else if (PORTBbits.RB6 == 0){
             dormir = 1;
             __asm("sleep");
+            PORTEbits.RE0 = 0;
+        }
+        else if (PORTBbits.RB5 == 0){
+            dormir = 0 ;
+            EEPROMWRITE(address, pot);
+            PORTEbits.RE0 = 1;
         }
         INTCONbits.RBIF = 0;
     }
@@ -2809,10 +2816,9 @@ void main(void){
                 ADCON0bits.GO = 1;
                 _delay((unsigned long)((20)*(1000000/4000000.0)));
             }
-
         }
+        PORTD = EEPROMREAD(address);
     }
-
 }
 
 
@@ -2824,10 +2830,12 @@ void setup(void){
     ANSELH = 0x00;
 
 
+    TRISBbits.TRISB5 = 1;
     TRISBbits.TRISB6 = 1;
     TRISBbits.TRISB7 = 1;
     TRISC = 0;
     TRISD = 0;
+    TRISE = 0;
 
 
     PORTA = 0;
@@ -2838,6 +2846,7 @@ void setup(void){
 
 
     OPTION_REGbits.nRBPU = 0;
+    WPUBbits.WPUB5 = 1;
     WPUBbits.WPUB6 = 1;
     WPUBbits.WPUB7 = 1;
 
@@ -2846,6 +2855,7 @@ void setup(void){
     INTCONbits.PEIE = 1;
     INTCONbits.RBIE = 1;
 
+    IOCBbits.IOCB5 = 1;
     IOCBbits.IOCB6 = 1;
     IOCBbits.IOCB7 = 1;
 
@@ -2881,4 +2891,34 @@ void setupADC(void){
 
     ADCON0bits.ADON = 1;
     _delay((unsigned long)((10)*(1000000/4000.0)));
+}
+
+
+void EEPROMWRITE(uint8_t address, uint8_t data){
+    EEADR = address;
+    EEDAT = data;
+
+    EECON1bits.EEPGD = 0;
+    EECON1bits.WREN = 1;
+
+    INTCONbits.GIE = 0;
+
+
+
+    EECON2 = 0x55;
+    EECON2 = 0xAA;
+    EECON1bits.WR = 1;
+
+    EECON1bits.WREN = 0;
+
+    INTCONbits.RBIF = 0;
+    INTCONbits.GIE = 1;
+
+}
+
+uint8_t EEPROMREAD(uint8_t address){
+    EEADR = address ;
+    EECON1bits.EEPGD = 0;
+    EECON1bits.RD = 1;
+    return EEDAT;
 }
